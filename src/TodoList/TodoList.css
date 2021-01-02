@@ -1,0 +1,7 @@
+.ant-list {
+  width: 50%;
+  margin: 0 auto !important;
+}
+.remove-button {
+  cursor: pointer;
+}
