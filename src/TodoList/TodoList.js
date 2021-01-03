@@ -24,7 +24,7 @@ const TodoList = ({newTask}) => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete("/todo/" + id +".json?")
+      await axios.delete(`/todo/${id}.json`)
       const updatedTasks = tasks.filter((item) => {
         return item.id !== id;
       })
@@ -37,7 +37,7 @@ const TodoList = ({newTask}) => {
   const updateTodo = async (id, completeStatus) => {
     const taskIndex = tasks.findIndex(task => task.id === id);
     try {
-      await axios.patch("/todo/" + id +".json?", {
+      await axios.patch(`/todo/${id}.json`, {
         completed: !completeStatus
       })
       const updatedData = [...tasks];
